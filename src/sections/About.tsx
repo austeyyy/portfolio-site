@@ -9,8 +9,6 @@ import {
   GithubIcon,
   LinkedinIcon,
 } from "lucide-react";
-import { motion } from "framer-motion";
-import { fadeIn } from "@/lib/animations";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollToDiscover from "@/components/ScrollToDiscover";
@@ -176,13 +174,7 @@ export const AboutSection = () => {
         <div className="pt-14">
           <div className="flex flex-col lg:flex-row">
             <div className="hidden lg:flex flex-1 relative">
-              <motion.div
-                className="w-[405px] h-[405px] relative"
-                variants={fadeIn("up", 0.2)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.2 }}
-              >
+              <div className="w-[405px] h-[405px] relative">
                 <Image
                   src={heroShape}
                   priority
@@ -195,18 +187,13 @@ export const AboutSection = () => {
                   alt="austen image"
                   className="absolute "
                 />
-              </motion.div>
+              </div>
             </div>
 
             {/* Tabs */}
             <div className="flex-1">
               <Tabs defaultValue="personal">
-                <motion.div
-                  variants={fadeIn("up", 0.2)}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: false, amount: 0.2 }}
-                >
+                <div>
                   <TabsList className="w-full grid lg:grid-cols-3 lg:max-w-[520px] lg:border dark:border-none">
                     <TabsTrigger
                       className="w-[162px] lg:w-auto hover:bg-black/5 hover:text-green-900 transition-all duration-300"
@@ -227,31 +214,19 @@ export const AboutSection = () => {
                       Skills
                     </TabsTrigger>
                   </TabsList>
-                </motion.div>
+                </div>
                 {/*content*/}
                 <div className="text-lg mt-12 lg:mt-8">
                   {/*Personal Tab*/}
                   <TabsContent value="personal">
                     <div className="text-center lg:text-left">
-                      <motion.h3
-                        className="text-3xl font-semibold mb-3"
-                        variants={fadeIn("up", 0.3)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: false, amount: 0.2 }}
-                      >
+                      <h3 className="text-3xl font-semibold mb-3">
                         <span className="text-gray-600 font-medium">
                           Hi, I'm{" "}
                         </span>
                         Austen 👋
-                      </motion.h3>
-                      <motion.p
-                        className="text-gray-600 max-w-lg mx-auto lg:mx-0 text-lg mb-8 font-light"
-                        variants={fadeIn("up", 0.4)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: false, amount: 0.2 }}
-                      >
+                      </h3>
+                      <p className="text-gray-600 max-w-lg mx-auto lg:mx-0 text-lg mb-8 font-light">
                         As a self-taught graphic designer turned developer, I
                         utilize{" "}
                         <span className="font-normal italic">
@@ -262,15 +237,10 @@ export const AboutSection = () => {
                         enables me to create solutions that are not only
                         functionally powerful but also visually compelling,
                         ensuring seamless experiences across all devices.
-                      </motion.p>
+                      </p>
                       {/*Icons*/}
                       <div className="flex sm:flex-col lg:flex-row gap-4 mb-8">
-                        <motion.div
-                          variants={fadeIn("left", 0.6)}
-                          initial="hidden"
-                          whileInView="show"
-                          viewport={{ once: false, amount: 0.2 }}
-                        >
+                        <div>
                           <a
                             href="/Austen Young Resume.pdf"
                             download
@@ -280,34 +250,26 @@ export const AboutSection = () => {
                               Resume <ArrowDownToLineIcon className="h-4 w-4" />
                             </button>
                           </a>
-                        </motion.div>
+                        </div>
 
                         <div className="flex flex-row gap-4 mx-auto lg:mx-0 mt-2 lg:mt-0">
-                          <motion.a
+                          <a
                             href="https://www.linkedin.com/in/austenyoung/"
                             className="relative"
-                            variants={fadeIn("left", 0.7)}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: false, amount: 0.2 }}
                           >
                             <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-black/5 transition-colors">
                               <LinkedinIcon className="size-4" />
                             </button>
-                          </motion.a>
+                          </a>
 
-                          <motion.a
+                          <a
                             href="https://www.linkedin.com/in/austenyoung/"
                             className="relative"
-                            variants={fadeIn("left", 0.8)}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: false, amount: 0.2 }}
                           >
                             <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-black/5 transition-colors">
                               <GithubIcon className="size-4" />
                             </button>
-                          </motion.a>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -316,26 +278,14 @@ export const AboutSection = () => {
                   {/*Experience Tab*/}
                   <TabsContent value="Experience">
                     <div>
-                      <motion.h3
-                        className="text-3xl font-semibold mb-6 text-center lg:text-left"
-                        variants={fadeIn("up", 0.3)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: false, amount: 0.2 }}
-                      >
+                      <h3 className="text-3xl font-semibold mb-6 text-center lg:text-left">
                         My Journey
-                      </motion.h3>
+                      </h3>
 
                       {/* Experience & prof dev wrapper */}
                       <div className="grid md:grid-cols-2 gap-y-6 lg:gap-x-16 sm:px-3">
                         {/* Experience */}
-                        <motion.div
-                          className="flex flex-col gap-y-4"
-                          variants={fadeIn("up", 0.4)}
-                          initial="hidden"
-                          whileInView="show"
-                          viewport={{ once: false, amount: 0.2 }}
-                        >
+                        <div className="flex flex-col gap-y-4">
                           <div className="flex gap-x-3 items-center text-lg text-green-900">
                             <Briefcase size={18} />
                             <h4 className="capitalize font-medium">
@@ -371,15 +321,9 @@ export const AboutSection = () => {
                               }
                             )}
                           </div>
-                        </motion.div>
+                        </div>
                         {/* Prof Dev and Leadership */}
-                        <motion.div
-                          className="flex flex-col gap-y-4"
-                          variants={fadeIn("up", 0.5)}
-                          initial="hidden"
-                          whileInView="show"
-                          viewport={{ once: false, amount: 0.2 }}
-                        >
+                        <div className="flex flex-col gap-y-4">
                           <div className="flex gap-x-3 items-center text-lg text-green-900">
                             <UsersRound size={18} />
                             <h4 className="capitalize font-medium">
@@ -418,7 +362,7 @@ export const AboutSection = () => {
                               );
                             })}
                           </div>
-                        </motion.div>
+                        </div>
                       </div>
                     </div>
                   </TabsContent>
@@ -426,15 +370,9 @@ export const AboutSection = () => {
                   {/*Skills*/}
                   <TabsContent value="skills">
                     <div className="text-center lg:text-left">
-                      <motion.h3
-                        className="text-3xl font-semibold mb-6"
-                        variants={fadeIn("up", 0.3)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: false, amount: 0.2 }}
-                      >
+                      <h3 className="text-3xl font-semibold mb-6">
                         My Skillset
-                      </motion.h3>
+                      </h3>
 
                       {/*languages & frameworks list*/}
                       <div className="mb-12">

@@ -4,8 +4,6 @@ import BeautifulDreamersLandingPage from "@/assets/images/beautifuldreamers-scre
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import { motion } from "framer-motion";
-import { fadeIn } from "@/lib/animations";
 import Image from "next/image";
 
 import VSCode from "public/about/vscode.svg";
@@ -45,27 +43,16 @@ export const ProjectsSection = () => {
       id="projects"
     >
       <div className="container">
-        <motion.div
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
-        >
+        <div>
           <SectionHeader
             eyebrow="Real World Results"
             title="Featured Projects."
             description="See how I transformed concepts into engaging digital experiences"
           />
-        </motion.div>
+        </div>
 
         {/*Projects Wrapper*/}
-        <motion.div
-          className="flex flex-col mt-10 md:mt-20 gap-20"
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
+        <div className="flex flex-col mt-10 md:mt-20 gap-20">
           {/* For Each Project, Create a Card*/}
           {portfolioProjects.map((project, projectIndex) => (
             <Card
@@ -131,7 +118,7 @@ export const ProjectsSection = () => {
               </div>
             </Card>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
