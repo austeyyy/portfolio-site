@@ -169,7 +169,7 @@ export const AboutSection = () => {
   };
 
   return (
-    <section className=" lg:h-[780px] pt-24 pb-[20px] md:pb-[60px] lg:pb-[300px] relative">
+    <section className=" lg:h-[780px] pt-8 pb-[20px] md:pb-[60px] lg:pb-[300px] lg:pt-24 relative">
       <div className="container mx-auto">
         <div className="pt-14">
           <div className="flex flex-col lg:flex-row">
@@ -194,7 +194,7 @@ export const AboutSection = () => {
             <div className="flex-1">
               <Tabs defaultValue="personal">
                 <div>
-                  <TabsList className="w-full grid lg:grid-cols-3 lg:max-w-[520px] lg:border dark:border-none">
+                  <TabsList className="w-full grid lg:grid-cols-3 lg:max-w-[520px] lg:border ">
                     <TabsTrigger
                       className="w-[162px] lg:w-auto hover:bg-black/5 hover:text-green-900 transition-all duration-300"
                       value="personal"
@@ -246,7 +246,7 @@ export const AboutSection = () => {
                             download
                             className="relative"
                           >
-                            <button className="bg-green-700 text-white h-10  md:w-auto px-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-green-800 transition-colors z-20">
+                            <button className="bg-green-700 text-white h-10  md:w-auto px-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-green-800 hover:scale-105 transition-all duration-300 z-20">
                               Resume <ArrowDownToLineIcon className="h-4 w-4" />
                             </button>
                           </a>
@@ -257,7 +257,7 @@ export const AboutSection = () => {
                             href="https://www.linkedin.com/in/austenyoung/"
                             className="relative"
                           >
-                            <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-black/5 transition-colors">
+                            <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
                               <LinkedinIcon className="size-4" />
                             </button>
                           </a>
@@ -266,7 +266,7 @@ export const AboutSection = () => {
                             href="https://www.linkedin.com/in/austenyoung/"
                             className="relative"
                           >
-                            <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-black/5 transition-colors">
+                            <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
                               <GithubIcon className="size-4" />
                             </button>
                           </a>

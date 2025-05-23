@@ -19,7 +19,7 @@ export const ContactSection = () => {
           . Let's get in touch!{" "}
           <span className="font-bold">austeytech@gmail.com</span>
         </p>
-        <a href="#" className="block text-center">
+        <a href="mailto:austeytech@gmail.com" className="block text-center">
           <button className="bg-green-700 text-white h-12 px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 hover:bg-green-800 transition-colors ">
             Contact Me <SendIcon className="h-4 w-4" />
           </button>
