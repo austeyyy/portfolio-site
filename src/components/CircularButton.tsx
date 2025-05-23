@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import DownArrow from "@/assets/icons/arrow-down.svg";
-import { useNavigation } from "@/hooks/navigation";
 
 // Define a type for the size prop
 type SizeConfig = {
