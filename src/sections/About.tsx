@@ -173,7 +173,7 @@ export const AboutSection = () => {
       <div className="container mx-auto">
         <div className="pt-14">
           <div className="flex flex-col lg:flex-row">
-            <div className="hidden lg:flex flex-1 relative">
+            <div className="flex flex-1 relative">
               <div className="w-[405px] h-[405px] relative">
                 <Image
                   src={heroShape}
@@ -263,7 +263,7 @@ export const AboutSection = () => {
                           </a>
 
                           <a
-                            href="https://www.linkedin.com/in/austenyoung/"
+                            href="https://github.com/austeyyy"
                             className="relative"
                           >
                             <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
@@ -429,7 +429,9 @@ export const AboutSection = () => {
           </div>
         </div>
       </div>
-      <ScrollToDiscover />
+      <div className="hidden lg:block">
+        <ScrollToDiscover />
+      </div>
     </section>
   );
 };
