@@ -1,6 +1,8 @@
 import Spline from "@splinetool/react-spline/next";
 import CircularButton from "@/components/CircularButton";
 import SetViewportHeight from "@/components/SetViewportHeight";
+import { GithubIcon, LinkedinIcon } from "lucide-react";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
@@ -9,6 +11,24 @@ export const HeroSection = () => {
 
       <div className="absolute inset-0 z-0">
         <Spline scene="https://prod.spline.design/JK-2gyURL1-S7OCF/scene.splinecode" />
+      </div>
+
+      <div className="absolute left-0 bottom-0 hidden lg:block">
+        <div className="flex gap-6 px-7 py-5">
+          <Link
+            href="https://github.com/austeyyy"
+            className="hover:scale-110 transition"
+          >
+            <GithubIcon className="opacity-50 hover:opacity-100 transition" />
+          </Link>
+
+          <Link
+            href="https://www.linkedin.com/in/austenyoung/"
+            className="hover:scale-110 transition"
+          >
+            <LinkedinIcon className="opacity-50 hover:opacity-100 transition" />
+          </Link>
+        </div>
       </div>
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10">
         <CircularButton
@@ -19,7 +39,7 @@ export const HeroSection = () => {
           repeatText={2}
           letterSpacing={1.01}
           size={{
-            sm: 100,
+            sm: 140,
             md: 140,
             lg: 160,
           }}
