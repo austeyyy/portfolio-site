@@ -5,7 +5,6 @@ import SetViewportHeight from "@/components/SetViewportHeight";
 export const HeroSection = () => {
   return (
     <section className="hero-section touch-none select-none">
-      {/*Component Fixes Problems with 100vh on Mobile*/}
       <SetViewportHeight />
 
       <div className="absolute inset-0 z-0">
