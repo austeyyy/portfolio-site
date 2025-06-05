@@ -436,7 +436,7 @@ export const AboutSection = () => {
                             const languageItem = item as LanguageItem;
                             return (
                               <div key={index} className="group relative">
-                                <div className="p-2 rounded-lg hover:bg-lime-50 transition-colors">
+                                <div className="p-2 rounded-lg hover:bg-lime-50 transition-all duration-300">
                                   <Image
                                     src={languageItem.imgPath}
                                     width={36}
@@ -470,7 +470,7 @@ export const AboutSection = () => {
                               const toolItem = item as ToolItem;
                               return (
                                 <div key={index} className="group relative">
-                                  <div className="p-2 rounded-lg hover:bg-lime-50 transition-colors">
+                                  <div className="p-2 rounded-lg hover:bg-lime-50 transition-all duration-300">
                                     <Image
                                       src={toolItem.imgPath}
                                       width={36}
