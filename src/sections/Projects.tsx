@@ -39,7 +39,7 @@ const portfolioProjects = [
 export const ProjectsSection = () => {
   return (
     <section
-      className="pb-12 sm:py-16 md:pb-20 md:pt-8 lg:pb-24 lg:pt-10"
+      className="pb-12 pt-20 md:pb-20 md:pt-8 lg:pb-24 lg:pt-10"
       id="projects"
     >
       <div className="container">
@@ -100,7 +100,7 @@ export const ProjectsSection = () => {
                     rel="noopener noreferrer"
                     className="relative z-20"
                   >
-                    <button className="bg-green-700 text-white h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 hover:bg-green-800 transition-colors z-20">
+                    <button className="bg-green-700 text-white h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 hover:bg-green-800 hover:scale-105 transition-all duration-300 z-20">
                       <span>{project.sitetype}</span>
                       <ArrowUpRightIcon className="size-4" />
                     </button>

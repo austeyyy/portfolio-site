@@ -11,7 +11,7 @@ export const ContactSection = () => {
         <div>
           <SectionHeader eyebrow="" title="Let's Work." description="" />
         </div>
-        <p className="text-center md:text-lg lg:text-xl text-gray-600 mt-4 mx-auto">
+        <p className="text-center text-lg lg:text-xl text-gray-600 mt-4 mx-auto">
           Interested in internships for{" "}
           <span className="italic font-semibold">
             Frontend Software Engineering & Software Development
@@ -20,7 +20,7 @@ export const ContactSection = () => {
           <span className="font-bold">austeytech@gmail.com</span>
         </p>
         <a href="mailto:austeytech@gmail.com" className="block text-center">
-          <button className="bg-green-700 text-white h-12 px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 hover:bg-green-800 transition-colors ">
+          <button className="bg-green-700 text-white h-12 px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 hover:bg-green-800 hover:scale-105 transition-all duration-300">
             Contact Me <SendIcon className="h-4 w-4" />
           </button>
         </a>

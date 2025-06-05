@@ -33,33 +33,20 @@ interface ExperienceCategory {
 }
 
 /* Skills */
-interface SkillItem {
+interface LanguageItem {
+  imgPath: string;
   name: string;
 }
 
 interface ToolItem {
   imgPath: string;
+  name: string;
 }
 
 interface SkillCategory {
   title: string;
-  data: SkillItem[] | ToolItem[];
+  data: LanguageItem[] | ToolItem[];
 }
-
-const infoData: InfoItem[] = [
-  {
-    icon: <User2 size={20} />,
-    text: "Austen Young",
-  },
-  {
-    icon: <MailIcon size={20} />,
-    text: "austeytech@gmail.com",
-  },
-  {
-    icon: <GraduationCap size={20} />,
-    text: "Bachelors in Computer Science At Ohio State University",
-  },
-];
 
 const ExperienceData: ExperienceCategory[] = [
   {
@@ -67,7 +54,7 @@ const ExperienceData: ExperienceCategory[] = [
     data: [
       {
         company: "AGNT",
-        role: "UI/UX Designer",
+        role: "UI/UX Design Intern",
         years: "Summer 2024",
       },
       {
@@ -77,7 +64,7 @@ const ExperienceData: ExperienceCategory[] = [
       },
       {
         company: "SEO Tech Developer",
-        role: "Software Engineer",
+        role: "Software Engineer Intern",
         years: "Summer 2025",
       },
     ],
@@ -109,45 +96,85 @@ const skillData: SkillCategory[] = [
     title: "languages & frameworks",
     data: [
       {
-        name: "HTLM5/CSS3",
+        imgPath: "/about/languages/HTML.svg",
+        name: "HTML",
       },
       {
+        imgPath: "/about/languages/React.svg",
         name: "React",
       },
       {
-        name: "NextJs",
+        imgPath: "/about/languages/css.svg",
+        name: "CSS",
       },
       {
-        name: "TypeScript",
+        imgPath: "/about/languages/bootstrap.svg",
+        name: "BootStrap",
       },
       {
+        imgPath: "/about/languages/javascript.svg",
         name: "JavaScript",
       },
       {
+        imgPath: "/about/languages/java.svg",
         name: "Java",
       },
       {
-        name: "Bootstrap",
+        imgPath: "/about/languages/next.svg",
+        name: "NextJS",
       },
       {
+        imgPath: "/about/languages/typescript.svg",
+        name: "TypeScript",
+      },
+      {
+        imgPath: "/about/languages/tailwind.svg",
         name: "Tailwind",
       },
       {
+        imgPath: "/about/languages/c.svg",
         name: "C",
       },
-    ] as SkillItem[],
+      {
+        imgPath: "/about/languages/python.svg",
+        name: "Python",
+      },
+    ] as LanguageItem[],
   },
   {
     title: "tools",
     data: [
       {
-        imgPath: "/about/vscode.svg",
+        imgPath: "/about/tools/vscode.svg",
+        name: "VSCode",
       },
       {
-        imgPath: "/about/figma.svg",
+        imgPath: "/about/tools/figma.svg",
+        name: "Figma",
       },
       {
-        imgPath: "/about/blender.svg",
+        imgPath: "/about/tools/blender.svg",
+        name: "Blender",
+      },
+      {
+        imgPath: "/about/tools/illustrator.svg",
+        name: "Adobe Illustrator",
+      },
+      {
+        imgPath: "/about/tools/photoshop.svg",
+        name: "Adobe Photoshop",
+      },
+      {
+        imgPath: "/about/tools/aftereffects.svg",
+        name: "Adobe After Effects",
+      },
+      {
+        imgPath: "/about/tools/jetbrains.svg",
+        name: "JetBrains",
+      },
+      {
+        imgPath: "/about/tools/docker.svg",
+        name: "Docker",
       },
     ] as ToolItem[],
   },
@@ -174,7 +201,7 @@ export const AboutSection = () => {
         <div className="pt-14">
           <div className="flex flex-col lg:flex-row">
             <div className="flex flex-1 relative">
-              <div className="w-[405px] h-[405px] relative">
+              <div className="w-[250px] h-[250px] m-auto md:m-0 md:w-[405px] md:h-[405px] relative">
                 <Image
                   src={heroShape}
                   priority
@@ -189,9 +216,24 @@ export const AboutSection = () => {
                 />
               </div>
             </div>
+            <div className="pt-11 text-center block md:hidden">
+              <h3 className="font-semibold text-3xl mb-3">
+                <span className="text-gray-600 font-medium">Hi, I'm </span>
+                Austen 👋
+              </h3>
+
+              <p className="text-gray-600 text-lg">
+                A Computer Science and UX student{" "}
+                <span className=" font-semibold">
+                  @ The Ohio State University
+                </span>
+              </p>
+
+              <hr className=" mx-auto border-t-2 border-gray-300 mt-6 w-1/3" />
+            </div>
 
             {/* Tabs */}
-            <div className="flex-1">
+            <div className="flex-1 pt-6 md:pt-0">
               <Tabs defaultValue="personal">
                 <div>
                   <TabsList className="w-full grid lg:grid-cols-3 lg:max-w-[520px] lg:border ">
@@ -216,11 +258,15 @@ export const AboutSection = () => {
                   </TabsList>
                 </div>
                 {/*content*/}
-                <div className="text-lg mt-12 lg:mt-8">
+                <div className="text-lg mt-8 md:mt-12 lg:mt-8">
                   {/*Personal Tab*/}
                   <TabsContent value="personal">
                     <div className="text-center lg:text-left">
-                      <h3 className="text-3xl font-semibold mb-3">
+                      <h3 className="block md:hidden text-3xl font-semibold mb-3">
+                        About Me
+                      </h3>
+
+                      <h3 className="hidden md:block text-3xl font-semibold mb-3">
                         <span className="text-gray-600 font-medium">
                           Hi, I'm{" "}
                         </span>
@@ -285,10 +331,10 @@ export const AboutSection = () => {
                       {/* Experience & prof dev wrapper */}
                       <div className="grid md:grid-cols-2 gap-y-6 lg:gap-x-16 sm:px-3">
                         {/* Experience */}
-                        <div className="flex flex-col gap-y-4">
+                        <div className="flex flex-col gap-y-4 mb-5">
                           <div className="flex gap-x-3 items-center text-lg text-green-900">
                             <Briefcase size={18} />
-                            <h4 className="capitalize font-medium">
+                            <h4 className="capitalize font-semibold text-2xl md:text-xl">
                               {getData(ExperienceData, "experience")?.title}
                             </h4>
                           </div>
@@ -326,7 +372,7 @@ export const AboutSection = () => {
                         <div className="flex flex-col gap-y-4">
                           <div className="flex gap-x-3 items-center text-lg text-green-900">
                             <UsersRound size={18} />
-                            <h4 className="capitalize font-medium">
+                            <h4 className="capitalize font-semibold text-2xl md:text-xl">
                               {
                                 getData(
                                   ExperienceData,
@@ -375,24 +421,38 @@ export const AboutSection = () => {
                       </h3>
 
                       {/*languages & frameworks list*/}
-                      <div className="mb-12">
-                        <h4 className="text-lg font-semibold mb-2">Skills</h4>
+                      <div className="mb-5">
+                        <h4 className="text-lg font-semibold mb-2">
+                          Languages & Frameworks
+                        </h4>
                         <div className="border-b border-border mb-3"></div>
                         {/*language list*/}
-                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
+                        <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
                           {getSkillData(
                             skillData,
                             "languages & frameworks"
                           )?.data.map((item, index) => {
-                            const skillItem = item as SkillItem;
+                            const languageItem = item as LanguageItem;
                             return (
-                              <div
-                                className="text-center lg:text-left"
-                                key={index}
-                              >
-                                <div className="text-sm font-medium">
-                                  {skillItem.name}
+                              <div key={index} className="group relative">
+                                <div className="p-2 rounded-lg hover:bg-lime-50 transition-colors">
+                                  <Image
+                                    src={languageItem.imgPath}
+                                    width={36}
+                                    height={36}
+                                    alt={
+                                      languageItem.name || `Language ${index}`
+                                    }
+                                    loading="lazy"
+                                    className="transition-transform group-hover:scale-110"
+                                  />
                                 </div>
+
+                                {languageItem.name && (
+                                  <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs bg-gray-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    {languageItem.name}
+                                  </span>
+                                )}
                               </div>
                             );
                           })}
@@ -403,18 +463,28 @@ export const AboutSection = () => {
                         <h4 className="text-lg font-semibold mb-2">Tools</h4>
                         <div className="border-b border-border mb-3"></div>
 
-                        <div className="flex gap-x-6 justify-center lg:justify-start">
+                        <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
                           {getSkillData(skillData, "tools")?.data.map(
                             (item, index) => {
                               const toolItem = item as ToolItem;
                               return (
-                                <div key={index}>
-                                  <img
-                                    src={toolItem.imgPath}
-                                    width={36}
-                                    height={36}
-                                    alt={`Tool ${index}`}
-                                  />
+                                <div key={index} className="group relative">
+                                  <div className="p-2 rounded-lg hover:bg-lime-50 transition-colors">
+                                    <Image
+                                      src={toolItem.imgPath}
+                                      width={36}
+                                      height={36}
+                                      alt={toolItem.name || `Tool ${index}`}
+                                      loading="lazy"
+                                      className="transition-transform group-hover:scale-110"
+                                    />
+                                  </div>
+                                  {/* Optional: Add tooltip */}
+                                  {toolItem.name && (
+                                    <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs bg-gray-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                      {toolItem.name}
+                                    </span>
+                                  )}
                                 </div>
                               );
                             }

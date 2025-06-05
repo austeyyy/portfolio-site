@@ -32,9 +32,9 @@ export default function ScrollToDiscover() {
   return (
     <div
       ref={pointerRef}
-      className="fixed bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center transition-opacity duration-300 cursor-pointer"
+      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center transition-opacity duration-300 cursor-pointer"
     >
-      <p className="text-sm mb-2">Scroll to discover</p>
+      <p className="text-sm mb-1">Scroll to Discover</p>
       <p className="animate-bounce">▾</p>
     </div>
   );
