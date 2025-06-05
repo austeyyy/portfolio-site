@@ -4,7 +4,7 @@ import TransitionLink from "./TransitionLink";
 
 export const Header = () => {
   return (
-    <div className="flex justify-center items-center fixed top-3 left-0 right-0 w-full z-10">
+    <div className="flex justify-center items-center fixed top-3 left-0 right-0 w-full z-30">
       <nav className="flex gap-1 p-0.5 border border-green-900/15 rounded-full bg-white/75 backdrop-blur">
         <TransitionLink href="/" label="Home" />
         <TransitionLink href="/main" label="About" />
