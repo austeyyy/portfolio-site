@@ -41,7 +41,6 @@ export default function Main() {
           <div className="before:content-[''] before:bg-[#3a9278]/80 before:md:bg-[#3a9278]/20 before:max-md:h-[8rem] before:max-md:w-[8rem] before:max-md:blur-[2.5rem] before:max-md:opacity-25 before:absolute before:top-[140rem] before:left-[5rem] before:h-[15rem] before:w-[15rem] before:rounded-full before:blur-[4rem] before:sm:h-[22rem] before:sm:w-[22rem]"></div>
         </div>
       </div>
-
       <Header />
       <AboutSection />
       <ProjectsSection />

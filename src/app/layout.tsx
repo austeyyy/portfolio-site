@@ -3,6 +3,7 @@ import { Inter, Calistoga } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import SmoothScrolling from "@/components/LenisProvider";
+import Header from "@/components/Header";
 
 //Fonts
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" }); //sans font
@@ -32,7 +33,9 @@ export default function RootLayout({
           "bg-white text-green-900 antialiased font-sans"
         )}
       >
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <main>
+          <SmoothScrolling>{children}</SmoothScrolling>
+        </main>
       </body>
     </html>
   );

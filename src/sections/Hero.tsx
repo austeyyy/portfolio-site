@@ -13,7 +13,7 @@ export const HeroSection = () => {
         <Spline scene="https://prod.spline.design/JK-2gyURL1-S7OCF/scene.splinecode" />
       </div>
 
-      <div className="absolute left-0 bottom-0 hidden lg:block z-10">
+      <div className="absolute left-0 bottom-0 hidden lg:block z-20">
         <div className="flex gap-6 px-7 py-5">
           <Link
             href="https://github.com/austeyyy"
