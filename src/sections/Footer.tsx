@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white/20 backdrop-blur border border-green-900/15 relative z-50">
+    <footer className="bg-white/20 backdrop-blur border border-green-900/15 relative z-20">
       <div className="py-14">
         <div className="container mx-auto ">
           {/*Icons*/}
