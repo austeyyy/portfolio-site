@@ -1,17 +1,14 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import LoadingOverlay from "@/components/LoadingOverlay";
 import { animatePageIn } from "@/lib/animations";
 
 export default function Template({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
   const [loadingDone, setLoadingDone] = useState(false);
   const [checkedStorage, setCheckedStorage] = useState(false);
-  const isInitialLoad = useRef(true); // ⬅️ Track initial site load
 
-  // Check if loading was done this session
+  // On mount, check if loading was done in this session
   useEffect(() => {
     if (sessionStorage.getItem("loadingDone") === "true") {
       setLoadingDone(true);
@@ -19,31 +16,23 @@ export default function Template({ children }: { children: React.ReactNode }) {
     setCheckedStorage(true);
   }, []);
 
-  // Animate after loading
+  //When loading finishes, run the stair animation
   useEffect(() => {
     if (loadingDone) {
-      const delayNeeded = pathname === "/" && !isInitialLoad.current;
-
-      if (delayNeeded) {
-        const timeout = setTimeout(() => {
-          animatePageIn();
-        }, 1200);
-
-        return () => clearTimeout(timeout);
-      } else {
-        animatePageIn();
-      }
-
-      isInitialLoad.current = false; // Mark first load as done
+      animatePageIn();
     }
-  }, [loadingDone, pathname]);
+  }, [loadingDone]);
 
+  //Callback from LoadingOverlay when loading finishes
   const handleLoadingFinish = () => {
     sessionStorage.setItem("loadingDone", "true");
     setLoadingDone(true);
   };
 
-  if (!checkedStorage) return null;
+  //Don't render anything until storage check completes
+  if (!checkedStorage) {
+    return null;
+  }
 
   return (
     <>
@@ -55,7 +44,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           pointerEvents: !loadingDone ? "none" : "auto",
         }}
       >
-        {/* Stair banners */}
+        {/* Banners for the stair animation */}
         <div
           id="banner-1"
           className="min-h-screen bg-neutral-100 z-50 fixed top-0 left-0 w-1/4"
@@ -72,6 +61,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
           id="banner-4"
           className="min-h-screen bg-neutral-100 z-50 fixed top-0 left-3/4 w-1/4"
         />
+
         {children}
       </div>
     </>
