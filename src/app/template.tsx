@@ -8,7 +8,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const [loadingDone, setLoadingDone] = useState(false);
   const [checkedStorage, setCheckedStorage] = useState(false);
 
-  // On mount, check if loading was done in this session
   useEffect(() => {
     if (sessionStorage.getItem("loadingDone") === "true") {
       setLoadingDone(true);
@@ -16,35 +15,30 @@ export default function Template({ children }: { children: React.ReactNode }) {
     setCheckedStorage(true);
   }, []);
 
-  //When loading finishes, run the stair animation
   useEffect(() => {
     if (loadingDone) {
       animatePageIn();
     }
   }, [loadingDone]);
 
-  //Callback from LoadingOverlay when loading finishes
   const handleLoadingFinish = () => {
     sessionStorage.setItem("loadingDone", "true");
     setLoadingDone(true);
   };
 
-  //Don't render anything until storage check completes
-  if (!checkedStorage) {
-    return null;
-  }
+  if (!checkedStorage) return null;
 
   return (
     <>
       {!loadingDone && <LoadingOverlay onFinish={handleLoadingFinish} />}
-
       <div
         style={{
-          filter: !loadingDone ? "blur(4px)" : "none",
-          pointerEvents: !loadingDone ? "none" : "auto",
+          opacity: loadingDone ? 1 : 0.75,
+          transition: "opacity 0.3s ease",
+          pointerEvents: loadingDone ? "auto" : "none",
         }}
       >
-        {/* Banners for the stair animation */}
+        {/* Stair banners */}
         <div
           id="banner-1"
           className="min-h-screen bg-neutral-100 z-50 fixed top-0 left-0 w-1/4"
@@ -61,7 +55,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
           id="banner-4"
           className="min-h-screen bg-neutral-100 z-50 fixed top-0 left-3/4 w-1/4"
         />
-
         {children}
       </div>
     </>

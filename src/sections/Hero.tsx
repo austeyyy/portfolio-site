@@ -1,35 +1,44 @@
-import Spline from "@splinetool/react-spline/next";
-import CircularButton from "@/components/CircularButton";
+"use client";
+
+import dynamic from "next/dynamic";
 import SetViewportHeight from "@/components/SetViewportHeight";
 import { GithubIcon, LinkedinIcon } from "lucide-react";
 import Link from "next/link";
 
+// Dynamically import CircularButton with no SSR
+const CircularButton = dynamic(() => import("@/components/CircularButton"), {
+  ssr: false,
+});
+
 export const HeroSection = () => {
   return (
-    <section className="hero-section touch-none select-none">
+    <section className="hero-section touch-none select-none relative">
       <SetViewportHeight />
 
+      {/* Background layer (consider lazy-loading or deferring if heavy later) */}
       <div className="absolute inset-0 z-0">
-        <Spline scene="https://prod.spline.design/JK-2gyURL1-S7OCF/scene.splinecode" />
+        {/* Spline removed for performance */}
       </div>
 
+      {/* Social icons */}
       <div className="absolute left-0 bottom-0 hidden lg:block z-20">
         <div className="flex gap-6 px-7 py-5">
           <Link
             href="https://github.com/austeyyy"
-            className="hover:scale-110 transition"
+            className="hover:scale-110 transition-transform"
           >
-            <GithubIcon className="opacity-50 hover:opacity-100 transition" />
+            <GithubIcon className="opacity-50 hover:opacity-100 transition-opacity" />
           </Link>
-
           <Link
             href="https://www.linkedin.com/in/austenyoung/"
-            className="hover:scale-110 transition"
+            className="hover:scale-110 transition-transform"
           >
-            <LinkedinIcon className="opacity-50 hover:opacity-100 transition" />
+            <LinkedinIcon className="opacity-50 hover:opacity-100 transition-opacity" />
           </Link>
         </div>
       </div>
+
+      {/* Explore Button */}
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10">
         <CircularButton
           text="EXPLORE NOW "
