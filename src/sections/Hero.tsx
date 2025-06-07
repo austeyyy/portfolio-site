@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 import SetViewportHeight from "@/components/SetViewportHeight";
 import { GithubIcon, LinkedinIcon } from "lucide-react";
 import Link from "next/link";
+import Spline from "@splinetool/react-spline";
 
-// Dynamically import CircularButton with no SSR
 const CircularButton = dynamic(() => import("@/components/CircularButton"), {
   ssr: false,
 });
@@ -15,9 +15,9 @@ export const HeroSection = () => {
     <section className="hero-section touch-none select-none relative">
       <SetViewportHeight />
 
-      {/* Background layer (consider lazy-loading or deferring if heavy later) */}
+      {/* 3D Spline scene */}
       <div className="absolute inset-0 z-0">
-        {/* Spline removed for performance */}
+        <Spline scene="https://prod.spline.design/JK-2gyURL1-S7OCF/scene.splinecode" />
       </div>
 
       {/* Social icons */}
@@ -38,7 +38,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Explore Button */}
+      {/* Explore button */}
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10">
         <CircularButton
           text="EXPLORE NOW "
