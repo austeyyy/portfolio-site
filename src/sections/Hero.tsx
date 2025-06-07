@@ -3,7 +3,6 @@
 import dynamic from "next/dynamic";
 import SetViewportHeight from "@/components/SetViewportHeight";
 import { GithubIcon, LinkedinIcon } from "lucide-react";
-import Link from "next/link";
 import Spline from "@splinetool/react-spline";
 
 const CircularButton = dynamic(() => import("@/components/CircularButton"), {

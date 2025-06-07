@@ -304,7 +304,7 @@ export const AboutSection = () => {
                             href="https://www.linkedin.com/in/austenyoung/"
                             className="relative"
                           >
-                            <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
+                            <button className="bg-transparent border-[1.25px] border-green-700 text-green-700 size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
                               <LinkedinIcon className="size-4" />
                             </button>
                           </a>
@@ -313,7 +313,7 @@ export const AboutSection = () => {
                             href="https://github.com/austeyyy"
                             className="relative"
                           >
-                            <button className="bg-white text-green-700 size-10 md:size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
+                            <button className="bg-transparent border-[1.25px] border-green-700 text-green-700 size-10 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
                               <GithubIcon className="size-4" />
                             </button>
                           </a>
