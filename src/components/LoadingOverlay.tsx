@@ -19,8 +19,8 @@ export default function LoadingOverlay({ onFinish }: LoadingOverlayProps) {
     if (count === 100) {
       setShowWelcome(true);
       setTimeout(() => {
-        setHideOverlay(true); // trigger fade
-        setTimeout(onFinish, 500); // unmount after fade
+        setHideOverlay(true);
+        setTimeout(onFinish, 500);
       }, 1000);
     }
   }, [count]);

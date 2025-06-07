@@ -23,18 +23,20 @@ export const HeroSection = () => {
       {/* Social icons */}
       <div className="absolute left-0 bottom-0 hidden lg:block z-20">
         <div className="flex gap-6 px-7 py-5">
-          <Link
+          <a
             href="https://github.com/austeyyy"
+            target="_blank"
             className="hover:scale-110 transition-transform"
           >
             <GithubIcon className="opacity-50 hover:opacity-100 transition-opacity" />
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://www.linkedin.com/in/austenyoung/"
+            target="_blank"
             className="hover:scale-110 transition-transform"
           >
             <LinkedinIcon className="opacity-50 hover:opacity-100 transition-opacity" />
-          </Link>
+          </a>
         </div>
       </div>
 

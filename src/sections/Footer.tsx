@@ -1,5 +1,4 @@
 import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
-import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -8,26 +7,28 @@ export const Footer = () => {
         <div className="container mx-auto ">
           {/*Icons*/}
           <div className="flex flex-row justify-center gap-8 pb-4">
-            <Link
+            <a
               href="https://github.com/austeyyy"
+              target="_blank"
               className="hover:scale-110 transition"
             >
               <GithubIcon />
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="https://www.linkedin.com/in/austenyoung/"
+              target="_blank"
               className="hover:scale-110 transition"
             >
               <LinkedinIcon />
-            </Link>
+            </a>
 
-            <Link
+            <a
               href="mailto:austeytech@gmail.com"
               className="hover:scale-110 transition"
             >
               <MailIcon />
-            </Link>
+            </a>
           </div>
 
           {/*Copyright*/}
