@@ -96,20 +96,20 @@ const skillData: SkillCategory[] = [
     title: "languages & frameworks",
     data: [
       {
-        imgPath: "/about/languages/HTML.svg",
+        imgPath: "/about/languages/html.svg",
         name: "HTML",
-      },
-      {
-        imgPath: "/about/languages/React.svg",
-        name: "React",
       },
       {
         imgPath: "/about/languages/css.svg",
         name: "CSS",
       },
       {
-        imgPath: "/about/languages/bootstrap.svg",
-        name: "BootStrap",
+        imgPath: "/about/languages/react.svg",
+        name: "React",
+      },
+      {
+        imgPath: "/about/languages/next.svg",
+        name: "NextJS",
       },
       {
         imgPath: "/about/languages/javascript.svg",
@@ -120,16 +120,8 @@ const skillData: SkillCategory[] = [
         name: "Java",
       },
       {
-        imgPath: "/about/languages/next.svg",
-        name: "NextJS",
-      },
-      {
         imgPath: "/about/languages/typescript.svg",
         name: "TypeScript",
-      },
-      {
-        imgPath: "/about/languages/tailwind.svg",
-        name: "Tailwind",
       },
       {
         imgPath: "/about/languages/c.svg",
@@ -138,6 +130,15 @@ const skillData: SkillCategory[] = [
       {
         imgPath: "/about/languages/python.svg",
         name: "Python",
+      },
+
+      {
+        imgPath: "/about/languages/bootstrap.svg",
+        name: "BootStrap",
+      },
+      {
+        imgPath: "/about/languages/tailwind.svg",
+        name: "Tailwind",
       },
     ] as LanguageItem[],
   },

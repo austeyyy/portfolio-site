@@ -1,13 +1,14 @@
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import ColorStackLandingPage from "@/assets/images/colorstack-screen.png";
 import BeautifulDreamersLandingPage from "@/assets/images/beautifuldreamers-screen.png";
+import PortfolioLandingPage from "@/assets/images/portfolio-screen.png";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import Image from "next/image";
 
 import VSCode from "public/about/vscode.svg";
-import HTML from "@/assets/icons/html5.svg";
+import HTML from "public/about/languages/html.svg";
 import CSS from "@/assets/icons/css3.svg";
 import JavaScript from "@/assets/icons/square-js.svg";
 import { FigmaIcon } from "lucide-react";
@@ -17,7 +18,11 @@ const portfolioProjects = [
     company: "ColorStack",
     year: "2025",
     title: "ColorStack at Ohio State Website",
-    techStack: [{ icon: HTML }, { icon: CSS }, { icon: JavaScript }],
+    techStack: [
+      { icon: "/about/languages/html.svg" },
+      { icon: "/about/languages/css.svg" },
+      { icon: "/about/languages/javascript.svg" },
+    ],
     description:
       "A community platform for Black and Latinx students interested in tech careers. Features event calendars, resources, and membership management.",
     sitetype: "View Project",
@@ -27,10 +32,29 @@ const portfolioProjects = [
     image: ColorStackLandingPage,
   },
   {
+    company: "Personal",
+    year: "2025",
+    title: "Personal Portfolio Site",
+    techStack: [
+      { icon: "/about/languages/react.svg" },
+      { icon: "/about/languages/typescript.svg" },
+      { icon: "/about/languages/tailwind.svg" },
+    ],
+    description:
+      "A clean, responsive portfolio showcasing my work as a designer & developer, featuring: selected projects, technical skills, and a bit about me. Built to highlight creativity, performance, and modern practices.",
+    sitetype: "View Project",
+    link: "https://austenyoung.dev",
+    image: PortfolioLandingPage,
+  },
+  {
     company: "AGNT",
     year: "2024",
     title: "Beautiful Dreamers Landing Page",
-    techStack: [{ icon: HTML }, { icon: CSS }, { icon: JavaScript }],
+    techStack: [
+      { icon: "/about/languages/html.svg" },
+      { icon: "/about/languages/css.svg" },
+      { icon: "/about/languages/javascript.svg" },
+    ],
     description:
       "An artistic e-commerce landing page for Beautiful Dreamers, featuring responsive design, custom animations, and seamless shopping integration.",
     sitetype: "View Project",
@@ -87,7 +111,13 @@ export const ProjectsSection = () => {
                         key={index}
                         className="bg-gray-100 py-0 px-1 rounded-lg"
                       >
-                        <tech.icon className="h-7 w-7 p-0 text-green-700" />
+                        <Image
+                          src={tech.icon}
+                          alt="techstackicon"
+                          height={30}
+                          width={30}
+                          className="p-0 text-green-700"
+                        />
                       </div>
                     ))}
                   </div>
@@ -112,16 +142,18 @@ export const ProjectsSection = () => {
                       </button>
                     </a>
 
-                    <a
-                      href={project.figma}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative z-20 shrink-0 md:block"
-                    >
-                      <button className="bg-transparent border-[1.5px] border-green-700 text-green-700 size-12 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
-                        <FigmaIcon className="size-4" />
-                      </button>
-                    </a>
+                    {project.figma && (
+                      <a
+                        href={project.figma}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-20 shrink-0 md:block"
+                      >
+                        <button className="bg-transparent border-[1.5px] border-green-700 text-green-700 size-12 rounded-xl font-semibold inline-flex items-center justify-center gap-2 hover:bg-gray-50 hover:scale-110 transition-all duration-300">
+                          <FigmaIcon className="size-4" />
+                        </button>
+                      </a>
+                    )}
                   </div>
                 </div>
 

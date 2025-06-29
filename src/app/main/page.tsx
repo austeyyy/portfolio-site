@@ -9,9 +9,6 @@ import palmLeaves from "@/assets/images/palm-leaves.png";
 import monsteraLeaves from "@/assets/images/monstera-leaves.png";
 
 export default function Main() {
-  {
-    /*f1efea*/
-  }
   return (
     <div className="bg-[#f5f4f1] relative">
       {/* Vignette effect */}
@@ -46,29 +43,6 @@ export default function Main() {
       <ProjectsSection />
       <ContactSection />
       <Footer />
-
-      {/*
-      <div className="fixed bottom-0 left-0 ">
-        <Image
-          src={palmLeaves}
-          alt="Palm leaves"
-          width={500}
-          height={400}
-          className="object-contain blur-sm filter brightness-95 contrast-200"
-        />
-      </div>
-  */}
-      {/*
-      <div className="fixed top-0 -right-56 ">
-        <Image
-          src={monsteraLeaves}
-          alt="Palm leaves"
-          width={1000}
-          height={900}
-          className="object-contain blur-sm filter brightness-95 contrast-150"
-        />
-      </div>
-  */}
     </div>
   );
 }
