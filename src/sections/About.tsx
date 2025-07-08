@@ -212,7 +212,6 @@ export const AboutSection = () => {
                 <Image
                   src={austenImg}
                   priority
-                  loading="eager"
                   alt="austen image"
                   className="absolute "
                 />

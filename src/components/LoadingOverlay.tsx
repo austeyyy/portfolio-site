@@ -1,38 +1,42 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AppleHelloEnglishEffect } from "@/components/ui/apple-hello-effect";
 
 interface LoadingOverlayProps {
   onFinish: () => void;
 }
 
 export default function LoadingOverlay({ onFinish }: LoadingOverlayProps) {
-  const [count, setCount] = useState(0);
-  const [showWelcome, setShowWelcome] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
   const [hideOverlay, setHideOverlay] = useState(false);
 
   useEffect(() => {
-    if (count < 100) {
-      const id = setTimeout(() => setCount((c) => c + 2), 20);
-      return () => clearTimeout(id);
+    // start after hydration + idle to reduce stutter
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => setShowAnimation(true));
+    } else {
+      setTimeout(() => setShowAnimation(true), 300);
     }
-    if (count === 100) {
-      setShowWelcome(true);
-      setTimeout(() => {
-        setHideOverlay(true);
-        setTimeout(onFinish, 500);
-      }, 1000);
-    }
-  }, [count]);
+  }, []);
+
+  const handleAnimationComplete = () => {
+    setHideOverlay(true);
+    setTimeout(onFinish, 500);
+  };
+
+  if (!showAnimation) return null;
 
   return (
     <div
-      className={`fixed inset-0 flex flex-col justify-center items-center bg-neutral-100 text-green-900 z-50 select-none transition-opacity duration-500 ${
+      className={`fixed inset-0 flex items-center justify-center bg-neutral-100 text-green-900 z-50 select-none transition-opacity duration-500 ${
         hideOverlay ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
-      {!showWelcome && <span className="text-5xl">{count}</span>}
-      {showWelcome && <span className="text-5xl font-semibold">Welcome!</span>}
+      <AppleHelloEnglishEffect
+        speed={1}
+        onAnimationComplete={handleAnimationComplete}
+      />
     </div>
   );
 }

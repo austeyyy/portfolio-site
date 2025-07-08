@@ -39,6 +39,7 @@ const portfolioProjects = [
       { icon: "/about/languages/react.svg" },
       { icon: "/about/languages/typescript.svg" },
       { icon: "/about/languages/tailwind.svg" },
+      { icon: "/about/languages/next.svg" },
     ],
     description:
       "A clean, responsive portfolio showcasing my work as a designer & developer, featuring: selected projects, technical skills, and a bit about me. Built to highlight creativity, performance, and modern practices.",
