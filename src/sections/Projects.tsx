@@ -2,6 +2,8 @@ import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import ColorStackLandingPage from "@/assets/images/colorstack-screen.png";
 import BeautifulDreamersLandingPage from "@/assets/images/beautifuldreamers-screen.png";
 import PortfolioLandingPage from "@/assets/images/portfolio-screen.png";
+import FaceFrameLandingPage from "@/assets/images/faceframe.png";
+import ColorHarmonizerLandingPage from "@/assets/images/color-harmonizer.png";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
@@ -15,16 +17,49 @@ import { FigmaIcon } from "lucide-react";
 
 const portfolioProjects = [
   {
-    company: "ColorStack",
+    company: "Design & Development",
+    year: "2025",
+    title: "FaceFrame",
+    techStack: [
+      { icon: "/about/languages/python.svg" },
+      { icon: "/about/languages/opencv.svg" },
+      { icon: "/about/languages/next.svg" },
+    ],
+    description:
+      "AI-powered eyewear recommendation engine that uses facial analysis and AR technology to match users with their perfect glasses. FaceFrame eliminates the guesswork in eyewear shopping.",
+    sitetype: "View Project",
+    link: "https://www.faceframeai.com/",
+    figma:
+      "https://www.figma.com/design/lst8VlsJDCFjHTVGaOu3FL/FaceFrame-WireFrames?node-id=0-1&t=5riRSNpFvydkb8Px-1",
+    image: FaceFrameLandingPage,
+  },
+  {
+    company: "Development",
+    year: "2025",
+    title: "Colorithm Adobe Plugin",
+    techStack: [
+      { icon: "/about/languages/react.svg" },
+      { icon: "/about/languages/nodejs.svg" },
+      { icon: "/about/tools/photoshop.svg" },
+    ],
+    description:
+      "Adobe Photoshop Plugin utilizing ColorMind's deep learning models and Adobe UXP to create AI generated color palettes and streamline the design process.",
+    sitetype: "View Project",
+    link: "https://github.com/austeyyy/colorithm-adobe-plugin",
+    image: ColorHarmonizerLandingPage,
+  },
+  {
+    company: "Design & Development",
     year: "2025",
     title: "ColorStack at Ohio State Website",
     techStack: [
       { icon: "/about/languages/html.svg" },
       { icon: "/about/languages/css.svg" },
       { icon: "/about/languages/javascript.svg" },
+      { icon: "/about/languages/bootstrap.svg" },
     ],
     description:
-      "A community platform for Black and Latinx students interested in tech careers. Features event calendars, resources, and membership management.",
+      "Community platform for Black and Latinx students interested in tech careers. Features event calendars, resources, and membership management.",
     sitetype: "View Project",
     link: "https://colorstackosu.org/",
     figma:
@@ -32,32 +67,31 @@ const portfolioProjects = [
     image: ColorStackLandingPage,
   },
   {
-    company: "Personal",
+    company: "Development",
     year: "2025",
-    title: "Personal Portfolio Site",
+    title: "Personal Portfolio Website",
     techStack: [
-      { icon: "/about/languages/react.svg" },
+      { icon: "/about/languages/next.svg" },
       { icon: "/about/languages/typescript.svg" },
       { icon: "/about/languages/tailwind.svg" },
-      { icon: "/about/languages/next.svg" },
     ],
     description:
-      "A clean, responsive portfolio showcasing my work as a designer & developer, featuring: selected projects, technical skills, and a bit about me. Built to highlight creativity, performance, and modern practices.",
+      "A clean, responsive portfolio showcasing my work as a designer & developer, featuring: selected projects, technical skills, and a bit about me.",
     sitetype: "View Project",
     link: "https://austenyoung.dev",
     image: PortfolioLandingPage,
   },
   {
-    company: "AGNT",
+    company: "Design",
     year: "2024",
-    title: "Beautiful Dreamers Landing Page",
+    title: "Beautiful Dreamers Brand Design",
     techStack: [
       { icon: "/about/languages/html.svg" },
       { icon: "/about/languages/css.svg" },
       { icon: "/about/languages/javascript.svg" },
     ],
     description:
-      "An artistic e-commerce landing page for Beautiful Dreamers, featuring responsive design, custom animations, and seamless shopping integration.",
+      "E-commerce landing page for Beautiful Dreamers, a diverse kids bedding business; featuring responsive design, custom animations, and seamless shopping integration.",
     sitetype: "View Project",
     link: "https://austeyyy.github.io/beautiful-dreamers-demo/",
     figma:
@@ -67,6 +101,9 @@ const portfolioProjects = [
 ];
 
 export const ProjectsSection = () => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+  const offset = isMobile ? 18 : 30;
+
   return (
     <section
       className="pb-12 pt-20 md:pb-20 md:pt-8 lg:pb-24 lg:pt-10"
@@ -89,7 +126,7 @@ export const ProjectsSection = () => {
               key={project.title}
               className="pt-8 px-8 pb-0 md:pt-12 md:px-10 lg:px-20 lg:pt-16 sticky"
               style={{
-                top: `calc(64px + ${projectIndex * 40}px`,
+                top: `calc(64px + ${projectIndex * offset}px`,
               }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
