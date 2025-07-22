@@ -289,7 +289,7 @@ export const AboutSection = () => {
                       <div className="flex sm:flex-col lg:flex-row gap-4 mb-8">
                         <div>
                           <a
-                            href="/Austen Young Resume.pdf"
+                            href="/Austen Young SWE Resume.pdf"
                             download
                             className="relative"
                           >
