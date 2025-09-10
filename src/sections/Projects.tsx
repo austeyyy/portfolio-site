@@ -4,6 +4,7 @@ import BeautifulDreamersLandingPage from "@/assets/images/beautifuldreamers-scre
 import PortfolioLandingPage from "@/assets/images/portfolio-screen.png";
 import FaceFrameLandingPage from "@/assets/images/faceframe.png";
 import ColorHarmonizerLandingPage from "@/assets/images/color-harmonizer.png";
+import TreblLandingPage from "@/assets/images/trebl-screen.png";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
@@ -16,6 +17,22 @@ import JavaScript from "@/assets/icons/square-js.svg";
 import { FigmaIcon } from "lucide-react";
 
 const portfolioProjects = [
+  {
+    company: "Development",
+    year: "2025",
+    title: "Trebl",
+    techStack: [
+      { icon: "/about/languages/html.svg" },
+      { icon: "/about/languages/flask.svg" },
+      { icon: "/about/languages/sqlalch.svg" },
+      { icon: "/about/languages/tailwind.svg" },
+    ],
+    description:
+      "Gamified travel & music discovery where users can earn badges, track listening memories, and physically explore global music trends with friends.",
+    sitetype: "View Project",
+    link: "https://youtu.be/XZHk6PMtSyk",
+    image: TreblLandingPage,
+  },
   {
     company: "Design & Development",
     year: "2025",

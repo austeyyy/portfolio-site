@@ -134,7 +134,7 @@ body {
 /* Utility Classes */
 @layer utilities {
   .container {
-    @apply lg:max-w-5xl;
+    @apply w-full max-w-none px-4 lg:max-w-5xl lg:px-0;
   }
 }
 
