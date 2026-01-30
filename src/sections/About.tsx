@@ -184,14 +184,14 @@ const skillData: SkillCategory[] = [
 export const AboutSection = () => {
   const getData = (
     arr: ExperienceCategory[],
-    title: string
+    title: string,
   ): ExperienceCategory | undefined => {
     return arr.find((item) => item.title === title);
   };
 
   const getSkillData = (
     arr: SkillCategory[],
-    title: string
+    title: string,
   ): SkillCategory | undefined => {
     return arr.find((item) => item.title === title);
   };
@@ -289,7 +289,7 @@ export const AboutSection = () => {
                       <div className="flex sm:flex-col lg:flex-row gap-4 mb-8">
                         <div>
                           <a
-                            href="/Austen Young SWE Resume.pdf"
+                            href="/Austen Young Resume.pdf"
                             download
                             className="relative"
                           >
@@ -365,7 +365,7 @@ export const AboutSection = () => {
                                     </div>
                                   </div>
                                 );
-                              }
+                              },
                             )}
                           </div>
                         </div>
@@ -377,7 +377,7 @@ export const AboutSection = () => {
                               {
                                 getData(
                                   ExperienceData,
-                                  "professional development"
+                                  "professional development",
                                 )?.title
                               }
                             </h4>
@@ -386,7 +386,7 @@ export const AboutSection = () => {
                           <div className="flex flex-col gap-y-6">
                             {getData(
                               ExperienceData,
-                              "professional development"
+                              "professional development",
                             )?.data.map((item, index) => {
                               const { company, role, years } = item;
                               return (
@@ -431,7 +431,7 @@ export const AboutSection = () => {
                         <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
                           {getSkillData(
                             skillData,
-                            "languages & frameworks"
+                            "languages & frameworks",
                           )?.data.map((item, index) => {
                             const languageItem = item as LanguageItem;
                             return (
@@ -488,7 +488,7 @@ export const AboutSection = () => {
                                   )}
                                 </div>
                               );
-                            }
+                            },
                           )}
                         </div>
                       </div>
